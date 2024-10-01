@@ -1,0 +1,23 @@
+---
+interface Props {
+  items: { title: string; content: string; itemKey: number }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="mx-auto">
+  {
+    items.map((item) => (
+        <details class="mb-2">
+          <summary class="cursor-pointer bg-gray-100 ring-1 ring-gray-200 p-4 font-medium text-gray-700 rounded-xl">
+            {item.title}
+          </summary>
+          <div
+            class="px-4 py-2 mt-1 text-gray-600 sm:bg-white rounded-xl"
+            set:html={item.content}
+          />
+        </details>
+    ))
+  }
+</div>

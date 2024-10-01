@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
+import Link from "../components/Link.astro";
+import Contact from "../components/Contact.astro";
+import Separator from "../components/Separator";
+import Accordion from "../components/Accordion.astro";
+import Footer from "../components/Footer.astro";
+
+const accordionItems = [
+
+  {
+	itemKey: 1,
+    title: "Puis-je venir essayer avant de faire ma licence ?",
+    content: "Oui ! Tu peux venir t'entraîner avec nous pendant 2 semaines avant de faire ta licence. Tu pourras ainsi découvrir le sport et l'équipe. Contacte-nous, pour plus d'informations via les réseaux sociaux ou par mai à l'adresse <a class='text-nowrap hover:cursor-pointer underline underline-offset-2' href='mailto:contact@raptors-flagfootball.com'>contact@raptors-flagfootball.com</a>"
+  },
+  {
+    itemKey: 2,
+	title: "Convaincu ? Prends ta licence chez les Raptors !",
+    content: "Pour faire ta demande de licence, il te suffit d'envoyer un mail à <a class='text-nowrap hover:cursor-pointer underline underline-offset-2' href='mailto:secretariat@raptors-flagfootball.com'>secretariat@raptors-flagfootball.com</a> afin de recevoir le dossier d'inscription."
+  }
+];
+---
+
+<Layout title="Raptors Flag Football">
+  <main class="container mx-auto max-w-2xl max-h-full p-4" transition:animate="slide">
+    <div class="">
+      <Header title="Raptors" tagline="Toulouse Flag Football" />
+    </div>
+
+    <Separator client:load/>
+
+    <div class="grid grid-cols-2 gap-8">
+      <Link
+        href="https://instagram.com/raptors_flagfootball_fr/"
+        title="Instagram"
+      />
+      <Link
+        href="https://www.facebook.com/profile.php?id=61566742947758"
+        title="Facebook"
+      />
+    </div>
+    <Separator/>
+	<Card
+	title="Le Flag Football"
+	body="Le Flag Football est un sport mixte, sans contact, dérivé du Football Américain. Il se joue à 5 contre 5 sur un terrain de 50x25 yards. L'équipe qui attaque possède 4 tentatives pour parcourir la moitié du terrain. Si elle réussit, elle a de nouveau 4 tentatives pour marquer un touchdown. Si elle échoue, l'équipe adverse prend la possession du ballon."
+  />
+  <Card
+	title="Sport Olympique"
+	body="Le Flag Football est un sport en plein essor. Il est reconnu par le Comité Olympique International et est intégré aux Jeux Olympiques d'été de 2028 à Los Angeles. Les Raptors sont fiers de participer à la promotion de ce sport."
+  />
+	<Accordion items={accordionItems} />
+    <Separator/>
+      <Card
+        title="Qui sommes-nous ?"
+        body="Les Raptors sont une équipe de Flag Football basée à Toulouse. Créée en 2024, elle est composée de joueurs et de joueuses de tout niveaux. L'équipe évolue en championnat national et participe à des tournois internationaux."
+      />
+	  <Card
+	  	title="Devenir bénévole"
+		body="Envie de s'impliquer dans un projet et de découvrir la vie associative ? Vous pouvez devenir bénévole de l'association Toulouse Flag Football et prendre part à son fonctionnement. Contactez-nous pour plus d'informations."
+		/>
+	  <Card 
+	  	title="Soutenir l'équipe"
+		body="Vous souhaitez soutenir l'équipe ? Vous pouvez nous aider en faisant un don ou en devenant partenaire. Contactez-nous pour plus d'informations."
+	  />
+    </div>
+    <Contact email="contact@raptors-flagfootball.com" />
+	<Footer />
+  </main>
+</Layout>
