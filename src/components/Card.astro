@@ -10,5 +10,5 @@ const { title, body } = Astro.props;
 	<div class="font-semibold text-xl leading-7 text-gray-900">
 	{title}
   </div>
-  <p class="mt-2 text-base leading-7 text-gray-600">{body}</p>
+  <p class="mt-2 text-base leading-7 text-gray-600"  set:html={body}></p>
 </div>
