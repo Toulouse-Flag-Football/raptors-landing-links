@@ -1,37 +1,48 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Card from "../components/Card.astro";
-import Link from "../components/Link.astro";
-import Contact from "../components/Contact.astro";
-import Separator from "../components/Separator";
-import Accordion from "../components/Accordion.astro";
-import Footer from "../components/Footer.astro";
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Card from '../components/Card.astro'
+import Link from '../components/Link.astro'
+import Contact from '../components/Contact.astro'
+import Separator from '../components/Separator'
+import Accordion from '../components/Accordion.astro'
+import Footer from '../components/Footer.astro'
+import capitouls_logo from '../assets/capitouls_vertical.svg'
 
 const accordionItems = [
-
   {
-	itemKey: 1,
-    title: "Puis-je venir essayer avant de faire ma licence ?",
-    content: "Oui ! Tu peux venir t'entraîner avec nous pendant 2 semaines avant de faire ta licence. Tu pourras ainsi découvrir le sport et l'équipe. Contacte-nous pour plus d'informations via les réseaux sociaux ou par mail à l'adresse <a class='text-nowrap hover:cursor-pointer underline underline-offset-2' href='mailto:contact@raptors-flagfootball.com'>contact@raptors-flagfootball.com</a>"
+    itemKey: 1,
+    title: 'Puis-je venir essayer avant de faire ma licence ?',
+    content:
+      "Oui ! Tu peux venir t'entraîner avec nous pendant 2 semaines avant de faire ta licence. Tu pourras ainsi découvrir le sport et l'équipe. Contacte-nous pour plus d'informations via les réseaux sociaux ou par mail à l'adresse <a class='text-nowrap hover:cursor-pointer underline underline-offset-2' href='mailto:contact@raptors-flagfootball.com'>contact@raptors-flagfootball.com</a>",
   },
   {
     itemKey: 2,
-	title: "Convaincu·e ? Prends ta licence chez les Raptors !",
-    content: "Pour faire ta demande de licence, il te suffit d'envoyer un mail à <a class='text-nowrap hover:cursor-pointer underline underline-offset-2' href='mailto:contact@raptors-flagfootball.com'>contact@raptors-flagfootball.com</a> afin de recevoir le dossier d'inscription."
-  }
-];
+    title: 'Convaincu·e ? Prends ta licence chez les Raptors !',
+    content:
+      "Pour faire ta demande de licence, il te suffit d'envoyer un mail à <a class='text-nowrap hover:cursor-pointer underline underline-offset-2' href='mailto:contact@raptors-flagfootball.com'>contact@raptors-flagfootball.com</a> afin de recevoir le dossier d'inscription.",
+  },
+]
 ---
 
 <Layout>
-  <main class="container mx-auto max-w-2xl max-h-full p-4" transition:animate="slide">
-    <div class="">
-      <Header title="Raptors" tagline="Toulouse Flag Football" />
+  <main
+    class="container mx-auto max-w-2xl max-h-full p-4"
+    transition:animate="slide"
+  >
+    <div class="flex flex-col justify-center mx-auto items-center">
+      <!-- <Header title="Raptors" tagline="Toulouse Flag Football" /> -->
+      <img
+        class="mt-32"
+        src={capitouls_logo.src}
+        alt="Capitouls Flag Football Logo"
+        width="500"
+        height="128"
+      />
     </div>
+    <Separator client:load />
 
-    <Separator client:load/>
-
-    <div class="grid grid-cols-2 gap-8">
+    <!-- <div class="grid grid-cols-2 gap-8">
       <Link
         href="https://instagram.com/raptors_flagfootball_fr/"
         title="Instagram"
@@ -40,8 +51,23 @@ const accordionItems = [
         href="https://www.facebook.com/profile.php?id=61566742947758"
         title="Facebook"
       />
+    </div> -->
+    <Card
+      title=" Les Raptors deviennent les Capitouls !"
+      body="À partir de la saison 2025-2026, notre équipe fédérale tourne une nouvelle page de son histoire : les Raptors laissent place aux Capitouls. Ce choix affirme notre ancrage local, en écho à l’histoire et aux symboles de Toulouse. Avec cette nouvelle identité, nous voulons renforcer nos liens avec le territoire et bâtir des partenariats solides, aux couleurs de notre ville. <br/>Rejoignez-nous dans cette aventure passionnante sous les couleurs des Capitouls !"
+    />
+    <div class="grid gap-8">
+      <a
+        class="rounded-xl px-3 py-1 leading-6 text-gray-600 ring-2 ring-[#851914]/40 hover:ring-[#851914]/80 hover:transform hover:scale-110 hover:-rotate-2 hover:cursor-pointer"
+        href="https://www.toulouseflagfootball.fr/capitouls"
+      >
+        <p class="text-lg font-semibold leading-7 text-gray-900 text-center p-2">
+          Rejoindre les Capitouls
+        </p>
+      </a>
     </div>
     <Separator/>
+    <!--
 	<Card
 	title="Le Flag Football"
 	body="Le Flag Football est un sport mixte, sans contact, dérivé du Football Américain. C'est un sport accessible à tous et à toutes, qui combine stratégie, technique et fair-play.<br/> Le Flag Football se joue à 5 contre 5 sur un terrain de 50x25 yards (environ 45x23 mètres). L'équipe qui attaque dispose de 4 tentatives pour parcourir la moitié du terrain. Si elle réussit, elle a de nouveau 4 tentatives pour marquer un touchdown (le ballon traverse la ligne d'en-but). Si elle échoue, l'équipe adverse prend la possession du ballon. L'équipe qui défend peut interrompre le jeu, non pas en plaquant les adversaires mais en arrachant un drapeau accroché à leur ceinture."
@@ -64,8 +90,8 @@ const accordionItems = [
 	  	title="Soutenir l'équipe"
 		body="Vous souhaitez soutenir l'équipe ? Vous pouvez nous aider en faisant un don ou en devenant partenaire. Contactez-nous pour plus d'informations."
 	  />
-    </div>
+    </div> -->
     <Contact email="contact@toulouseflagfootball.fr" />
-	<Footer />
+    <Footer />
   </main>
 </Layout>
